@@ -21,16 +21,9 @@
                 } 
                 
                 else if (lenghtFlower <= 2) {
-                    if (inputFlower == 'R') {
-                        if (flowerList.Get(0) == flowerList.Get(-1)) {
+                    if (inputFlower == 'R' && flowerList.Get(0) == 'R' && flowerList.Get(-1) == 'R') {
                         Console.WriteLine("Invalid Pattern");
                     } 
-                    else if (flowerList.Get(-1) == 'R') {
-                        Console.WriteLine("Invalid Pattern");
-                    } 
-                    else if (flowerList.Get(-1) == inputFlower && flowerList.Get(0) == flowerList.Get(-2)) {
-                        Console.WriteLine("Invalid Pattern");
-                    }
                     else if (flowerList.Get(-2) == inputFlower && flowerList.Get(-1) == 'R') {
                         Console.WriteLine("Invalid Pattern");
                     }
@@ -39,25 +32,41 @@
                     }
                     }
                 else if (lenghtFlower >= 3) {
-                    if (inputFlower == 'G') {
-                        if (flowerList.Get(0) == inputFlower && flowerList.Get(1) == 'G' && flowerList.Get(2) == 'G' && flowerList.Get(3) == 'G') {
+                    if (inputFlower == 'R') {
+                    if (flowerList.Get(0) == 'R' && flowerList.Get(-1) == 'R') {
+                        Console.WriteLine("Invalid Pattern");
+                    } 
+                    else {
+                        flowerList.Add(inputFlower);
+                    }
+                    }
+                    else if (flowerList.Get(-1) == 'R' && flowerList.Get(-2) == inputFlower) {
+                        Console.WriteLine("Invalid Pattern");
+                    }
+                    else if (inputFlower == 'G') {
+                        if (flowerList.Get(0) == inputFlower && flowerList.Get(1) == 'G' && flowerList.Get(2) == 'G') {
                             Console.WriteLine("Invalid Pattern");
                         }
-                        else if (flowerList.Get(0) == 'G' && flowerList.Get(-1) == 'G' && flowerList.Get(-2) == 'G' && flowerList.Get(-3) == 'G') {
+                        else if (flowerList.Get(-1) == 'G' && flowerList.Get(-2) == 'G' && flowerList.Get(-3) == 'G') {
+                            Console.WriteLine("Invalid Pattern");
+                        } 
+                        else if (flowerList.Get(-2) == 'G' && flowerList.Get(-1) == 'G' && flowerList.Get(0) == 'G') {
+                            Console.WriteLine("Invalid Pattern");
+                        } 
+                        else if (flowerList.Get(-1) == 'G' && flowerList.Get(0) == 'G' && flowerList.Get(1) == 'G') {
                             Console.WriteLine("Invalid Pattern");
                         } 
                         else {
                         flowerList.Add(inputFlower);
                         }
                     }
-                        else {
+                    else {
                         flowerList.Add(inputFlower);
-                        }
                     }
+                }
                 else {
                     flowerList.Add(inputFlower);
                 } 
-                }
             }
         }  
     }
