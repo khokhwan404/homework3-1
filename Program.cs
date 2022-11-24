@@ -19,18 +19,18 @@
                         flowerList.Add(inputFlower);
                     } 
                 } 
-                
                 else if (lenghtFlower <= 2) {
-                    if (inputFlower == 'R' && flowerList.Get(0) == 'R' && flowerList.Get(-1) == 'R') {
+                    if (inputFlower == 'R' && flowerList.Get(0) == flowerList.Get(-1)) {
                         Console.WriteLine("Invalid Pattern");
                     } 
-                    else if (flowerList.Get(-2) == inputFlower && flowerList.Get(-1) == 'R') {
+                    else if (flowerList.Get(-1) == 'R' && flowerList.Get(-2) == inputFlower) {
                         Console.WriteLine("Invalid Pattern");
                     }
                     else {
                         flowerList.Add(inputFlower);
                     }
                     }
+
                 else if (lenghtFlower >= 3) {
                     if (inputFlower == 'R') {
                     if (flowerList.Get(0) == 'R' && flowerList.Get(-1) == 'R') {
